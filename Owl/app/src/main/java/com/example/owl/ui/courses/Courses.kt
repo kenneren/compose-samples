@@ -20,7 +20,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
@@ -65,7 +65,7 @@ fun Courses(selectCourse: (Long) -> Unit) {
                             label = { Text(stringResource(tab.title).toUpperCase()) },
                             selected = tab == selectedTab,
                             onClick = { setSelectedTab(tab) },
-                            alwaysShowLabels = false,
+                            alwaysShowLabel = false,
                             selectedContentColor = MaterialTheme.colors.secondary,
                             unselectedContentColor = LocalContentColor.current,
                             modifier = Modifier.navigationBarsPadding()
@@ -88,7 +88,7 @@ fun Courses(selectCourse: (Long) -> Unit) {
 fun CoursesAppBar() {
     TopAppBar(
         elevation = 0.dp,
-        modifier = Modifier.preferredHeight(80.dp)
+        modifier = Modifier.height(80.dp)
     ) {
         Image(
             modifier = Modifier
